@@ -7,7 +7,8 @@ import java.time.LocalDate;
 @Entity
 public class Film {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)// trzeba poczytać o @GeneratedValue(strategy = GenerationType.IDENTITY) bp niby jest lepsza
+    // a wywalilo mi miliard błędów bo id nie ma przypisanej wartości czy coś w tym stylu
     private Long id;
     private String title;
     private LocalDate productionYear;
@@ -18,6 +19,7 @@ public class Film {
     }
 
     public Film( String title, LocalDate productionYear, String descryption, String link) {
+        //this.id = id;
         this.title = title;
         this.productionYear = productionYear;
         this.descryption = descryption;
