@@ -10,10 +10,10 @@ import java.time.LocalDate;
 @Entity
 public class Film  {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)// trzeba poczytać o @GeneratedValue(strategy = GenerationType.IDENTITY) bp niby jest lepsza
-    // a wywalilo mi miliard błędów bo id nie ma przypisanej wartości czy coś w tym stylu
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotEmpty
+    @NotEmpty(message="To pole nie może byś puste")
+   // @Column(unique = true) zeby tytuły filmu sie nie powtarzały ale to potem
     private String title;
     private LocalDate productionYear;
     private String descryption;
