@@ -1,18 +1,23 @@
 package com.example.project1.accessToData.table;
 
 
+
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
 @Entity
-public class Film {
+public class Film  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)// trzeba poczytać o @GeneratedValue(strategy = GenerationType.IDENTITY) bp niby jest lepsza
     // a wywalilo mi miliard błędów bo id nie ma przypisanej wartości czy coś w tym stylu
     private Long id;
+    @NotEmpty
     private String title;
     private LocalDate productionYear;
     private String descryption;
+    @NotEmpty
     private String link;
 
     protected Film() {
