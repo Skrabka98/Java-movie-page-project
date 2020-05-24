@@ -1,5 +1,6 @@
 package com.example.project1.manager;
 
+import com.example.project1.accessToData.FilmRead;
 import com.example.project1.accessToData.FilmRepository;
 import com.example.project1.accessToData.table.Film;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +48,11 @@ public class FilmManager {
     public void deleteById(Long id) {
        this.filmRepository.deleteById(id);
     }
+
+
+
+
+
 
 
 
