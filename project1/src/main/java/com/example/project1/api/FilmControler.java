@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FilmControler {
 
     @GetMapping
-    public String showFilms(){
-        return "films";
+    String showFilms(){
+        return "projects";
     }
 }

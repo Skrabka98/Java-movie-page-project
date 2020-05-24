@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- respons -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css">
 
     <title>Project: films</title>
 
 </head>
 <body>
 <main>
+    <!--/*@thymesVar id="project" type=""*/-->
+    <form action="#" method="post" th:action="@{/projects}" th:object="${project}">
     <fieldset>
         <legend>Wyszukaj film</legend>
+        <label>
+            Opis
+            <input type="text" />
+        </label>
     </fieldset>
+    </form>
 </main>
 
 
