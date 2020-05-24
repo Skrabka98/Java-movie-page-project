@@ -2,6 +2,7 @@ package com.example.project1.service;
 
 import com.example.project1.accessToData.FilmRead;
 import com.example.project1.accessToData.FilmRepository;
+import com.example.project1.accessToData.table.Film;
 import com.example.project1.manager.FilmManager;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,7 @@ public class FilmService {
         this. filmManager =  filmManager;
     }
 
-   /* public List<FilmRead> readAll(){
-        return filmManager.findAll()
-    }*/
+       public Iterable<Film> readAll(){
+        return filmManager.findAll();
+    }
 }

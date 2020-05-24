@@ -46,7 +46,7 @@ public class FilmManager {
 
 
     public void deleteById(Long id) {
-       this.filmRepository.deleteById(id);
+        this.filmRepository.deleteById(id);
     }
 
 

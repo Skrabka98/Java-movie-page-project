@@ -3,6 +3,8 @@ package com.example.project1.accessToData.table;
 
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
@@ -15,12 +17,13 @@ public class Film  {
     @NotEmpty(message="To pole nie może byś puste")
    // @Column(unique = true) zeby tytuły filmu sie nie powtarzały ale to potem
     private String title;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate productionYear;
     private String descryption;
     @NotEmpty
     private String link;
 
-    protected Film() {
+    public Film() {
     }
 
     public Film( String title, LocalDate productionYear, String descryption, String link) {

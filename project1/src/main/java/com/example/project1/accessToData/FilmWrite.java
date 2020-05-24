@@ -1,15 +1,21 @@
 package com.example.project1.accessToData;
 
 import com.example.project1.accessToData.table.Film;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
 public class FilmWrite {
 
+    @NotEmpty(message="To pole nie może byś puste")
     private String title;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate productionYear;
     private String descryption;
+    @NotEmpty(message="To pole nie może byś puste")
     private String link;
+
 
     public String getTitle() {
         return title;
@@ -42,6 +48,8 @@ public class FilmWrite {
     public void setLink(String link) {
         this.link = link;
     }
+
+
     public Film createFilm(){
         return new Film(title,productionYear,descryption,link);
     }
