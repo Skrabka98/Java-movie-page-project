@@ -1,8 +1,7 @@
 package com.example.project1.accessToData;
 
-import com.example.project1.accessToData.table.Film;
+import com.example.project1.accessToData.model.Film;
 
-import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
 
 public class FilmRead {

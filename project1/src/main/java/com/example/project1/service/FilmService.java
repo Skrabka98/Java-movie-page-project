@@ -1,23 +1,68 @@
 package com.example.project1.service;
 
-import com.example.project1.accessToData.FilmRead;
-import com.example.project1.accessToData.FilmRepository;
-import com.example.project1.accessToData.table.Film;
-import com.example.project1.manager.FilmManager;
+import com.example.project1.dao.FilmRepository;
+import com.example.project1.accessToData.model.Film;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
+
 
 @Service
 public class FilmService {
 
-    private FilmManager filmManager;
+    //odwołuje się do film repository które dziediczy po jparepoziotory a tam znajduja sie wszystkie metody które wywołujemy po kropce
+    private final FilmRepository filmRepository;
 
-    public FilmService(FilmManager filmManager) {
-        this. filmManager =  filmManager;
+    @Autowired
+    public FilmService(FilmRepository filmRepository) {
+        this.filmRepository = filmRepository;
+
     }
 
-       public Iterable<Film> readAll(){
-        return filmManager.findAll();
+    //wtszukuje po tytule
+    public List<Film> findFilm(String title){
+        return this.filmRepository.findByTitleContaining(title);
     }
+
+//sprawdza czy istnieje film o takim id
+    public boolean exist(Long id){
+        return this.filmRepository.existsById(id);
+    }
+
+
+    /*public Page<Film> findAll (Pageable pegable) {
+        return this.filmRepository.findAll(pegable);
+    }*/
+
+// zwraca wszystkie filmy
+    public Iterable<Film> findAll () {
+        return this.filmRepository.findAll();
+    }
+
+    //zapisuje nowy film do bazy
+    public Film save(Film film) {
+        return this.filmRepository.save(film);
+    }
+
+    //usuwa film po id
+    public void deleteById(Long id) {
+        this.filmRepository.deleteById(id);
+    }
+
+
+
+
+
+
+
+
+
+ /*   //przy oruchominiu aplikacji dodaje film do bazy
+    @EventListener(ApplicationReadyEvent.class)
+    public void saveDB(){
+        save(new Film("Matrix", LocalDate.of(1999, 3,24),"najlepszy","link" ));
+    }*/
+
 }

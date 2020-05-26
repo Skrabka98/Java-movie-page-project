@@ -1,4 +1,4 @@
-package com.example.project1.accessToData.table;
+package com.example.project1.accessToData.model;
 
 
 
@@ -8,9 +8,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDate;
-
+// ta klasa jest obiektem film w naszej bazie danych
 @Entity
-public class Film  {
+public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -1,6 +1,6 @@
 package com.example.project1.accessToData;
 
-import com.example.project1.accessToData.table.Film;
+import com.example.project1.accessToData.model.Film;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotEmpty;
@@ -51,6 +51,11 @@ public class FilmWrite {
 
 
     public Film createFilm(){
-        return new Film(title,productionYear,descryption,link);
+        var result = new Film();
+        result.setTitle(title);
+        result.setProductionYear(productionYear);
+        result.setDescryption(descryption);
+        result.setLink(link);
+        return result;
     }
 }

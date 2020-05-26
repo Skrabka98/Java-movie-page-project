@@ -35,7 +35,7 @@
                 <a class="nav-link" href="/projects">Edycja</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="/lista">Pricing</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About</a>
@@ -49,11 +49,16 @@
 </nav>
 <div class="container-fluid">
     <h1>Znajdż film dla siebie</h1>
-    <p>Źyczyny miłego oglądania</p>
+    <p>
+        <!--/@thymesVar id="film" type="java.util.List<com.example.project1.accessToData.model.Film>"/-->
+        <ul>
+    <li th:each ="film:${films}">
+        <span th:text="${film.title}"></span>
+    </li>
+</ul>
+    </p>
 </div>
-<tr th:each="film: ${}">
-    <td th:text="${Film.title}" />
-</tr>
+
 
 </body>
 </html>

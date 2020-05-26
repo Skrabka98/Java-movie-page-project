@@ -1,4 +1,4 @@
-package com.example.project1.api;
+package com.example.project1.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,7 +1,6 @@
-package com.example.project1.accessToData;
+package com.example.project1.dao;
 
-import com.example.project1.accessToData.table.Film;
-import com.example.project1.manager.FilmManager;
+import com.example.project1.accessToData.model.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Repository;

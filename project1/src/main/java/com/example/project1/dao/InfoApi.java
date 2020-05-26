@@ -1,4 +1,4 @@
-package com.example.project1.api;
+package com.example.project1.dao;
 
 import org.springframework.web.bind.annotation.RestController;
 

@@ -1,4 +1,4 @@
-package com.example.project1.api;
+package com.example.project1.dao;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ public class LoggerInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(final HttpServletRequest httpServletRequest, final HttpServletResponse httpServletResponse, final  Object hdandler)throws Exception{
-        logger.info("[doFilter]"+ httpServletRequest.getMethod()+" "+httpServletRequest.getRequestURI());
+        logger.info("[doInterceptor]"+ httpServletRequest.getMethod()+" "+httpServletRequest.getRequestURI());
         return true;
     }
 

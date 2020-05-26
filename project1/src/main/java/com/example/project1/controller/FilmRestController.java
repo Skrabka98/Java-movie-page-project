@@ -1,8 +1,7 @@
-package com.example.project1.api;
+package com.example.project1.controller;
 
-import com.example.project1.accessToData.FilmRepository;
-import com.example.project1.accessToData.table.Film;
-import com.example.project1.manager.FilmManager;
+import com.example.project1.accessToData.model.Film;
+import com.example.project1.service.FilmService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,27 +9,27 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/film")
-public class FilmApi {
+public class FilmRestController {
 
-    private static final Logger logger = LoggerFactory.getLogger(FilmApi.class);
-    private final FilmManager filmManager;
+    private static final Logger logger = LoggerFactory.getLogger(FilmRestController.class);
+    private final FilmService filmService; //połączenie z filmService
 
 
     @Autowired
-    public FilmApi(final FilmManager filmManager) {
-        this.filmManager = filmManager;
+    public FilmRestController(final FilmService filmService) {
+        this.filmService = filmService;
 
     }
 
+    //zwraca wszystkie filmy
     @GetMapping(value = "/lista",params = {"!sort", "!page", "!size"} )
     public ResponseEntity<Iterable<Film>> getAll(){
         logger.warn("Lista filmów");
-        return ResponseEntity.ok(this.filmManager.findAll());
+        return ResponseEntity.ok(this.filmService.findAll());
     }
 
   /*  @GetMapping(value = "/lista")
@@ -39,34 +38,37 @@ public class FilmApi {
         return ResponseEntity.ok(this.filmManager.findAll(pegable));
     }*/
 
-
+    //wyszukuje film po tytule
     @GetMapping
     public ResponseEntity<List<Film>>  findFilm(@Param("title") String title){
-        return ResponseEntity.ok(this.filmManager.findFilm(title));
+        return ResponseEntity.ok(this.filmService.findFilm(title));
     }
 
+    //dodawanie filmu
     @PostMapping
     public ResponseEntity<Film> addFilm(@RequestBody Film film){
-        this.filmManager.save(film);
+        this.filmService.save(film);
         return ResponseEntity.noContent().build();
     }
 
+    //edycja filmu o wybranym id
     @PutMapping("/{id}")
     public ResponseEntity<?> updateFilm(@PathVariable Long id,@RequestBody Film film){
-        if (!this.filmManager.exist(id)){
+        if (!this.filmService.exist(id)){
             return  ResponseEntity.notFound().build();
         }
         film.setId(id);
-        this.filmManager.save(film);
+        this.filmService.save(film);
         return ResponseEntity.noContent().build();
     }
 
+    //usuwanie filmu
     @DeleteMapping
     public void deleteFilm(@RequestParam Long index){
-        if (!this.filmManager.exist(index)){
+        if (!this.filmService.exist(index)){
               ResponseEntity.notFound().build();
         }
-        this.filmManager.deleteById(index);
+        this.filmService.deleteById(index);
         ResponseEntity.noContent().build();
     }
 

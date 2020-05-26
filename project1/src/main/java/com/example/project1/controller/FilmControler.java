@@ -1,8 +1,8 @@
-package com.example.project1.api;
+package com.example.project1.controller;
 
 import com.example.project1.accessToData.FilmWrite;
-import com.example.project1.accessToData.table.Film;
-import com.example.project1.manager.FilmManager;
+import com.example.project1.accessToData.model.Film;
+import com.example.project1.service.FilmService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,24 +17,27 @@ import javax.validation.Valid;
 @RequestMapping("/projects")
 public class FilmControler {
 
-    private final FilmManager filmManager;
+    private final FilmService filmService;
 
-    public FilmControler(FilmManager filmManager) {
-        this.filmManager = filmManager;
+    public FilmControler(FilmService filmService) {
+        this.filmService = filmService;
     }
 
     @GetMapping
     String showFilms(Model model){
-        model.addAttribute("project",new FilmWrite());
+        model.addAttribute("project",new Film());
         return "projects";
     }
 
     @PostMapping
-    String addFilm(@ModelAttribute ("project") @Valid Film filmWrite, BindingResult bindingResult, Model model){
+    String addFilm(@ModelAttribute ("project") @Valid Film film, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()) return "projects";
-        filmManager.save(filmWrite);
+        filmService.save(film);
         model.addAttribute("project",new Film());
         model.addAttribute("message","Dodano film");
         return "projects";
     }
+
+
+
 }
