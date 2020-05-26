@@ -14,13 +14,13 @@ public class Film  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotEmpty(message="To pole nie może byś puste")
+    @NotEmpty(message="Pole tytuł nie może byś puste")
    // @Column(unique = true) zeby tytuły filmu sie nie powtarzały ale to potem
     private String title;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate productionYear;
     private String descryption;
-    @NotEmpty
+    @NotEmpty (message="Pole link nie może byś puste")
     private String link;
 
     public Film() {

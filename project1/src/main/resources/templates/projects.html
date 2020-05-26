@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- respons -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/awsm.css/dist/awsm.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/js/bootstrap.js"></script>
 
     <title>Project: films</title>
+    <style>
+     body {
+           background-image: url('tlo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
 
+        }
+        .Bdc\(red\) {
+            border-color: red !important;
+        }
+        .C\(red\){
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <main>
+
     <h1 th:if="${message != null}" th:text ="${message}"></h1>
     <!--/*@thymesVar id="project" type="com.example.project1.accessToData.FilmWrite"*/-->
     <form action="#" method="post" th:action="@{/projects}" th:object="${project}">
+        <p class="C(red)" th:if="${#fields.hasAnyErrors()}" th:errors="*{all}"></p>
     <fieldset>
         <legend>Dodaj film</legend>
         <label>Tytuł
-            <input type="text" th:field="*{title}"/>
+            <input type="text" th:field="*{title}" th:errorclass="'Bdc(red)'"/>
         </label>
         <label>Rok produkcji
-            <input type="date" th:field="*{productionYear}" />
+            <input type="date" th:field="*{productionYear}"/>
         </label>
         <label>Opis
             <input type="text" th:field="*{descryption}"/>
         </label>
         <label>Linki
-            <input type="text" th:field="*{link}"/>
+            <input type="text" th:field="*{link}" th:errorclass="'Bdc(red)'"/>
         </label>
     </fieldset>
         <p>
@@ -36,7 +52,6 @@
         </p>
     </form>
 </main>
-
 
 
 
