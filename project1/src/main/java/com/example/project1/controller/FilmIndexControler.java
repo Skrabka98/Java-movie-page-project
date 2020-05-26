@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping(value = "/index")
+@RequestMapping(value = "/")
 public class FilmIndexControler {
     private final FilmService filmService;
 

@@ -50,10 +50,10 @@
 <div class="container-fluid">
     <h1>Znajdż film dla siebie</h1>
     <p>
-        <!--/@thymesVar id="film" type="java.util.List<com.example.project1.accessToData.model.Film>"/-->
         <ul>
+    <!--/*@thymesVar id="films" type="java.util.List<com.example.project1.accessToData.model.Film"*/-->
     <li th:each ="film:${films}">
-        <span th:text="${film.title}"></span>
+        <span th:text="${film.getTitle()}"></span>
     </li>
 </ul>
     </p>
