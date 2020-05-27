@@ -32,7 +32,7 @@ public class DeleteFilmController {
 
 
     @DeleteMapping
-    String deleteFilm(@RequestParam Long index, Model model){
+    String delete(@RequestParam Long index, Model model){
         if (!filmService.exist(index)){
             ResponseEntity.notFound().build();
         }
