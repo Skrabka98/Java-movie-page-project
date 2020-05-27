@@ -2,6 +2,7 @@ package com.example.project1.controller;
 
 import com.example.project1.accessToData.model.Film;
 import com.example.project1.service.FilmService;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/")
 public class FilmIndexControler {
+
+
     private final FilmService filmService;
 
     public FilmIndexControler(FilmService filmService) {
@@ -25,6 +28,7 @@ public class FilmIndexControler {
         model.addAttribute("films",film);
         return "index";
     }
+
 
 
 }

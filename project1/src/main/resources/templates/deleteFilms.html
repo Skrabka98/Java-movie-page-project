@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/css/bootstrap.css">
-    <script src="/static/js/bootstrap.js"></script>
+    <script src="/js/jquery.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.min.js"></script>
 
-    <title>Project: films</title>
+    <title>Project: deletefilms</title>
     <style>
         body {
             background-image: url('tlo.png');
@@ -15,6 +17,7 @@
             background-size: cover;
 
         }
+
     </style>
 </head>
 <body>
@@ -38,6 +41,36 @@
         </ul>
     </div>
 </nav>
+<main>
+<form>
+    <h2>Lista filmów</h2>
+    <table class="table table-responsive">
+
+        <th >
+        <td>ID</td>
+        <td>Tytuł</td>
+        <td>Rok ptodukcji</td>
+        <td>Opis</td>
+        <td>Linki</td>
+        <td></td>
+        </th>
+
+        <tr th:each="film : ${films}">
+            <td th:text="${film.id}"/>
+            <td th:text="${film.title}"/>
+            <td th:text="${film.productionYear}"/>
+            <td th:text="${film.descryption}"/>
+            <td th:text="${film.link}"/>
+
+
+            <td >
+                <a th:href="@{delete/__${film.id}__}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+    </table>
+
+</form>
+</main>
 
 </body>
 </html>
