@@ -5,10 +5,7 @@ import com.example.project1.service.FilmService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/delete")
@@ -31,12 +28,12 @@ public class DeleteFilmController {
     }
 
 
-    @DeleteMapping
-    String delete(@RequestParam Long index, Model model){
-        if (!filmService.exist(index)){
+    @GetMapping("/{id}")
+    String delete(@PathVariable Long id, Model model){
+        if (!filmService.exist(id)){
             ResponseEntity.notFound().build();
         }
-        filmService.deleteById(index);
+        filmService.deleteById(id);
         ResponseEntity.noContent().build();
         model.addAttribute("message","Usunięto film");
         return "deleteFilms";
