@@ -1,0 +1,12 @@
+2020-05-23 14:41:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "DATABASECHANGELOGLOCK" nie istnieje
+Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOGLOCK [42102-197]
+2020-05-23 14:41:12 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "DATABASECHANGELOG" nie istnieje
+Table "DATABASECHANGELOG" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOG [42102-197]
+2020-05-23 14:41:13 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "DATABASECHANGELOG" nie istnieje
+Table "DATABASECHANGELOG" not found; SQL statement:
+select count(*) from PUBLIC.DATABASECHANGELOG [42102-197]
