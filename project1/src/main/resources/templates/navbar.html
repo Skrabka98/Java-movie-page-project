@@ -2,18 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="/js/jquery.js"></script>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/background.css">
-    <script src="/js/bootstrap.min.js"></script>
-
-    <title>Project: films</title>
-
-
+    <title>Title</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav th:fragment="common-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Filmoteka</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -37,23 +29,5 @@
         </form>
     </div>
 </nav>
-<main>
-    <form>
-        <table class="table table-responsive">
-
-            <!--/*@thymesVar id="films" type="java.util.List<com.example.project1.accessToData.model.Film"*/-->
-            <tr th:each="film : ${films}">
-                <td/>
-                <td th:text="${film.getTitle()}"/>
-                <td th:text="${film.getProductionYear()}"/>
-                <td th:text="${film.getDescryption()}"/>
-                <td th:text="${film.getLink()}"/>
-
-
-        </table>
-
-    </form>
-</main>
-
 </body>
 </html>
