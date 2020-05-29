@@ -17,7 +17,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Filmoteka</a>
+    <a class="navbar-brand" href="/admin">Filmoteka</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,25 +25,18 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">Strona główna </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/projects">Dodaj film<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="/">Strona główna</a>
             </li>
         </ul>
     </div>
 </nav>
 
 <div class="container my-2">
-
         <div class="card-body">
             <div th:switch="${films}" class="container my-5">
                 <p class="my-5">
-                    <a href="/proba/edit" class="btn btn-primary">
-                        <i class="fas fa-user-plus ml-2"> Add Employee </i></a>
+                    <a href="/admin/edit" class="btn btn-primary">
+                        <i class="fas fa-user-plus ml-2"> Dodaj Film </i></a>
                 </p>
                 <div class="col-md-10">
                     <h2 th:case="null">No record found !!</h2>
@@ -55,8 +48,8 @@
                                 <td>Rok produkcji</td>
                                 <td>Opis</td>
                                 <td>Linki</td>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Edytuj</th>
+                                <th>Usuń</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -66,22 +59,21 @@
                                 <td th:text="${film.descryption}"></td>
                                 <td th:text="${film.link}"></td>
                                 <td>
-                                    <a th:href="@{/proba/edit/{id}(id=${film.id})}"
+                                    <a th:href="@{/admin/edit/{id}(id=${film.id})}"
                                        class="btn btn-primary">
-                                        <i class="fas fa-user-edit ml-2"></i>
+                                        <i class="fas fa-user-edit ml-2">Edytuj</i>
                                     </a>
                                 </td>
                                 <td>
-                                    <a th:href="@{/proba/{id}(id=${film.id})}"
+                                    <a th:href="@{/admin/{id}(id=${film.id})}"
                                        class="btn btn-primary">
-                                        <i class="fas fa-user-times ml-2"></i>
+                                        <i class="fas fa-user-times ml-2">Usuń</i>
                                     </a>
                                 </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
         </div>

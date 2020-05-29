@@ -56,44 +56,15 @@ public class FilmService {
         this.filmRepository.deleteById(id);
     }
 
-    public Film findFilmById(Long id) throws Exception
+    public Film findFilmById(Long id) //throws Exception
     {
         Optional<Film> filmOptional = filmRepository.findById(id);
 
-        if(filmOptional.isPresent()) {
+        //if(filmOptional.isPresent()) {
             return filmOptional.get();
-        }else {
+      /*  }else {
            throw new Exception();
-        }
-    }
-
-
-
-    //dodaje lub usuwa film
-    public Film editOrAddFilm(Film film) {
-        if (film.getId() == null) {
-            film = filmRepository.save(film);
-
-            return film;
-        } else {
-            Optional<Film> optionalFilm = filmRepository.findById(film.getId());
-
-            if (optionalFilm.isPresent()) {
-                Film newFilm = optionalFilm.get();
-                newFilm.setTitle(film.getTitle());
-                newFilm.setProductionYear(film.getProductionYear());
-                newFilm.setDescryption(film.getDescryption());
-                newFilm.setLink(film.getLink());
-
-                newFilm = filmRepository.save(newFilm);
-
-                return newFilm;
-            } else {
-                film = filmRepository.save(film);
-
-                return film;
-            }
-        }
+        }*/
     }
 }
 

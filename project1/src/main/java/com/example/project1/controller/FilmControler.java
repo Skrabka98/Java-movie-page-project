@@ -1,9 +1,8 @@
 package com.example.project1.controller;
 
-import com.example.project1.accessToData.FilmWrite;
+
 import com.example.project1.accessToData.model.Film;
 import com.example.project1.service.FilmService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;

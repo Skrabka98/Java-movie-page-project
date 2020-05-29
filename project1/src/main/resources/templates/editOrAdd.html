@@ -11,13 +11,19 @@
 
     <title>Project: films</title>
     <style>
+        .Bdc\(red\) {
+            border-color: red !important;
+        }
+        .C\(red\){
+            color: red;
+        }
 
     </style>
 
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Filmoteka</a>
+    <a class="navbar-brand" href="/admin">Filmoteka</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,12 +33,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="/">Strona główna </a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/projects">Dodaj film<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
         </ul>
     </div>
 </nav>
@@ -41,28 +41,29 @@
     <div class="card">
         <div class="card-body">
             <div class="col-md-10">
-                <form action="#" th:action="@{/addFilm}" th:object="${film}"
-                      method="post">
+                <h1 th:if="${message != null}" th:text ="${message}"></h1>
+                <form action="#" th:action="@{/admin/addFilm}" th:object="${film}" method="post">
+                    <p class="C(red)" th:if="${#fields.hasAnyErrors()}" th:errors="*{all}"></p>
                     <div class="row">
                         <div class="form-group col-md-8">
                             <label for="title" class="col-form-label">Tytuł</label>
                             <input type="text" th:field="*{title}" class="form-control"
-                                   id="title" placeholder="First Name" />
+                                   id="title" placeholder="Tytuł" th:errorclass="'Bdc(red)'" />
                         </div>
                         <div class="form-group col-md-8">
                             <label for="productionYear" class="col-form-label">Rok produkcji</label>
                             <input type="date" th:field="*{productionYear}" class="form-control"
-                                   id="productionYear" placeholder="Last Name" />
+                                   id="productionYear" placeholder="Rok Produkcji" />
                         </div>
                         <div class="form-group col-md-8">
                             <label for="descryption" class="col-form-label">Opis</label>
                             <input type="text" th:field="*{descryption}" class="form-control"
-                                   id="descryption" placeholder="Email Id" />
+                                   id="descryption" placeholder="Opis" />
                         </div>
                         <div class="form-group col-md-8">
                             <label for="link" class="col-form-label">Linki</label>
                             <input type="text" th:field="*{link}" class="form-control"
-                                   id="link" placeholder="Email Id" />
+                                   id="link" placeholder="Link" th:errorclass="'Bdc(red)'"/>
                         </div>
 
                         <div class="col-md-6">
