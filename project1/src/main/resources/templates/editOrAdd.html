@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.js"></script>
+
+    <title>Project: films</title>
+    <style>
+        body {
+            background-image: url('tlo.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Filmoteka</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Strona główna </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/projects">Dodaj film<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container my-5">
+    <h3> Dodaj Film</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/addFilm}" th:object="${film}"
+                      method="post">
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="title" class="col-form-label">Tytuł</label>
+                            <input type="text" th:field="*{title}" class="form-control"
+                                   id="title" placeholder="First Name" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="productionYear" class="col-form-label">Rok produkcji</label>
+                            <input type="date" th:field="*{productionYear}" class="form-control"
+                                   id="productionYear" placeholder="Last Name" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="descryption" class="col-form-label">Opis</label>
+                            <input type="text" th:field="*{descryption}" class="form-control"
+                                   id="descryption" placeholder="Email Id" />
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="link" class="col-form-label">Linki</label>
+                            <input type="text" th:field="*{link}" class="form-control"
+                                   id="link" placeholder="Email Id" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value=" Submit ">
+                        </div>
+
+                        <input type="hidden" id="id" th:field="*{id}">
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

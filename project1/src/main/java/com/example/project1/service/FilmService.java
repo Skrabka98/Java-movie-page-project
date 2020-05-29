@@ -23,12 +23,12 @@ public class FilmService {
     }
 
     //wtszukuje po tytule
-    public List<Film> findFilm(String title){
+    public List<Film> findFilm(String title) {
         return this.filmRepository.findByTitleContaining(title);
     }
 
-//sprawdza czy istnieje film o takim id
-    public boolean exist(Long id){
+    //sprawdza czy istnieje film o takim id
+    public boolean exist(Long id) {
         return this.filmRepository.existsById(id);
     }
 
@@ -37,12 +37,12 @@ public class FilmService {
         return this.filmRepository.findAll(pegable);
     }*/
 
-// zwraca wszystkie filmy
-    public Iterable<Film> findAll () {
+    // zwraca wszystkie filmy
+    public Iterable<Film> findAll() {
         return this.filmRepository.findAll();
     }
 
-    public Optional<Film>  findById(Long id){
+    public Optional<Film> findById(Long id) {
         return this.filmRepository.findById(id);
     }
 
@@ -56,6 +56,46 @@ public class FilmService {
         this.filmRepository.deleteById(id);
     }
 
+    public Film findFilmById(Long id) throws Exception
+    {
+        Optional<Film> filmOptional = filmRepository.findById(id);
+
+        if(filmOptional.isPresent()) {
+            return filmOptional.get();
+        }else {
+           throw new Exception();
+        }
+    }
+
+
+
+    //dodaje lub usuwa film
+    public Film editOrAddFilm(Film film) {
+        if (film.getId() == null) {
+            film = filmRepository.save(film);
+
+            return film;
+        } else {
+            Optional<Film> optionalFilm = filmRepository.findById(film.getId());
+
+            if (optionalFilm.isPresent()) {
+                Film newFilm = optionalFilm.get();
+                newFilm.setTitle(film.getTitle());
+                newFilm.setProductionYear(film.getProductionYear());
+                newFilm.setDescryption(film.getDescryption());
+                newFilm.setLink(film.getLink());
+
+                newFilm = filmRepository.save(newFilm);
+
+                return newFilm;
+            } else {
+                film = filmRepository.save(film);
+
+                return film;
+            }
+        }
+    }
+}
 
 
 
@@ -70,4 +110,3 @@ public class FilmService {
         save(new Film("Matrix", LocalDate.of(1999, 3,24),"najlepszy","link" ));
     }*/
 
-}
