@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org">
 <head>
 
     <meta charset="UTF-8">
@@ -30,10 +30,16 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="/">Strona główna </a>
+                <a class="nav-link" href="/">Strona główna <span class="sr-only"></span></a>
+            </li>
+            <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                <a class="nav-link" href="/admin">Admin <span class="sr-only"></span></a>
             </li>
 
         </ul>
+        <form sec:authorize="isAuthenticated()" class="form-inline" action="/" >
+            <a class="btn btn-light action-button" role="button" href="/logout">Wyloguj</a>
+        </form>
     </div>
 </nav>
 <main>
