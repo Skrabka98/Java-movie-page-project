@@ -36,7 +36,7 @@
 </nav>
 <main>
     <form>
-        <table class="table table-responsive">
+
 
             <!--/*@thymesVar id="films" type="java.util.List<com.example.project1.accessToData.model.Film"*/-->
             <tr th:each="film : ${films}">
@@ -47,7 +47,7 @@
                 <td><a th:href="${film.getLink()}">Oglądaj</a></td>
 
 
-        </table>
+
 
     </form>
 </main>

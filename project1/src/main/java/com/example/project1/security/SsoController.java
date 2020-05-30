@@ -14,7 +14,7 @@ public class SsoController {
     @GetMapping("/logout")
     String logout(HttpServletRequest request, FilmIndexControler film) throws ServletException{
         request.logout();
-        return "index";
+        return "redirect:/";
     }
 
 }
