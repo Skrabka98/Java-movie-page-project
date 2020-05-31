@@ -760,3 +760,56 @@ insert into REALM (ACCESS_CODE_LIFESPAN, LOGIN_LIFESPAN, USER_ACTION_LIFESPAN, A
 2020-05-31 20:16:50,011 WARN  [org.keycloak.events] (default task-1) type=LOGIN_ERROR, realmId=Filmoteka, clientId=filmoteka-client, userId=null, ipAddress=127.0.0.1, error=user_not_found, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:8080/sso/login, code_id=275e4d80-801c-47c0-8965-566d972bd9dc, username=Bartek, authSessionParentId=275e4d80-801c-47c0-8965-566d972bd9dc, authSessionTabId=d4hSR4sIV8o
 2020-05-31 21:14:45,328 WARN  [org.keycloak.events] (default task-1) type=LOGIN_ERROR, realmId=Filmoteka, clientId=filmoteka-client, userId=15a777ac-4992-4a5b-8a3c-d95a3bf416f5, ipAddress=127.0.0.1, error=invalid_user_credentials, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:8080/sso/login, code_id=e76896b4-f80a-4465-b57c-1d97c88cff10, username=user, authSessionParentId=e76896b4-f80a-4465-b57c-1d97c88cff10, authSessionTabId=cbUQcRYysIc
 2020-05-31 21:15:45,014 WARN  [org.keycloak.events] (default task-1) type=LOGIN_ERROR, realmId=Filmoteka, clientId=filmoteka-client, userId=15a777ac-4992-4a5b-8a3c-d95a3bf416f5, ipAddress=127.0.0.1, error=invalid_user_credentials, auth_method=openid-connect, auth_type=code, redirect_uri=http://localhost:8080/sso/login, code_id=1ccef1ad-0365-49a1-9da2-15f77b7d51d8, username=user, authSessionParentId=1ccef1ad-0365-49a1-9da2-15f77b7d51d8, authSessionTabId=lvD0h3_VCC4
+2020-05-31 22:02:07,804 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory C:\ppo\39607\Projekt_X\keycloak-10.0.1\standalone\deployments
+2020-05-31 22:02:08,022 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-7) WFLYSRV0027: Starting deployment of "keycloak-server.war" (runtime-name: "keycloak-server.war")
+2020-05-31 22:02:09,579 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8543
+2020-05-31 22:02:11,551 INFO  [org.infinispan.factories.GlobalComponentRegistry] (MSC service thread 1-3) ISPN000128: Infinispan version: Infinispan 'Infinity Minus ONE +2' 9.4.18.Final
+2020-05-31 22:02:11,995 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 65) WFLYCLINF0002: Started work cache from keycloak container
+2020-05-31 22:02:11,995 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 61) WFLYCLINF0002: Started keys cache from keycloak container
+2020-05-31 22:02:11,995 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0002: Started authenticationSessions cache from keycloak container
+2020-05-31 22:02:11,996 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 58) WFLYCLINF0002: Started actionTokens cache from keycloak container
+2020-05-31 22:02:12,002 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 66) WFLYCLINF0002: Started clientSessions cache from keycloak container
+2020-05-31 22:02:12,003 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 59) WFLYCLINF0002: Started offlineClientSessions cache from keycloak container
+2020-05-31 22:02:12,003 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 67) WFLYCLINF0002: Started offlineSessions cache from keycloak container
+2020-05-31 22:02:12,004 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0002: Started loginFailures cache from keycloak container
+2020-05-31 22:02:12,005 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 63) WFLYCLINF0002: Started realms cache from keycloak container
+2020-05-31 22:02:12,007 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 68) WFLYCLINF0002: Started sessions cache from keycloak container
+2020-05-31 22:02:12,008 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 62) WFLYCLINF0002: Started users cache from keycloak container
+2020-05-31 22:02:12,009 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 57) WFLYCLINF0002: Started authorization cache from keycloak container
+2020-05-31 22:02:12,053 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 69) WFLYCLINF0002: Started client-mappings cache from ejb container
+2020-05-31 22:02:13,046 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0273: Excluded subsystem webservices via jboss-deployment-structure.xml does not exist.
+2020-05-31 22:02:15,261 INFO  [org.keycloak.services] (ServerService Thread Pool -- 69) KC-SERVICES0001: Loading config from standalone.xml or domain.xml
+2020-05-31 22:02:16,336 INFO  [org.keycloak.url.DefaultHostnameProviderFactory] (ServerService Thread Pool -- 69) Frontend: <request>, Admin: <frontend>, Backend: <request>
+2020-05-31 22:02:16,529 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 69) WFLYCLINF0002: Started realmRevisions cache from keycloak container
+2020-05-31 22:02:16,535 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 69) WFLYCLINF0002: Started userRevisions cache from keycloak container
+2020-05-31 22:02:16,550 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 69) WFLYCLINF0002: Started authorizationRevisions cache from keycloak container
+2020-05-31 22:02:16,552 INFO  [org.keycloak.connections.infinispan.DefaultInfinispanConnectionProviderFactory] (ServerService Thread Pool -- 69) Node name: desktop-kdqdkij, Site name: null
+2020-05-31 22:02:28,555 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 69) HHH000204: Processing PersistenceUnitInfo [
+	name: keycloak-default
+	...]
+2020-05-31 22:02:28,696 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 69) HHH000412: Hibernate Core {5.3.15.Final}
+2020-05-31 22:02:28,698 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 69) HHH000206: hibernate.properties not found
+2020-05-31 22:02:29,047 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 69) HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2020-05-31 22:02:29,310 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 69) HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-31 22:02:29,317 WARN  [org.hibernate.dialect.H2Dialect] (ServerService Thread Pool -- 69) HHH000431: Unable to determine H2 database version, certain features may not work
+2020-05-31 22:02:29,373 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 69) Envers integration enabled? : true
+2020-05-31 22:02:29,851 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 69) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2020-05-31 22:02:29,955 INFO  [org.hibernate.validator.internal.util.Version] (ServerService Thread Pool -- 69) HV000001: Hibernate Validator 6.0.18.Final
+2020-05-31 22:02:31,123 INFO  [org.hibernate.hql.internal.QueryTranslatorFactoryInitiator] (ServerService Thread Pool -- 69) HHH000397: Using ASTQueryTranslatorFactory
+2020-05-31 22:02:31,973 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002225: Deploying javax.ws.rs.core.Application: class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,991 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakSecurityHeadersFilter from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,992 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002200: Adding class resource org.keycloak.services.resources.JsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,993 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002200: Adding class resource org.keycloak.services.resources.ThemeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,993 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002205: Adding provider class org.keycloak.services.filters.KeycloakTransactionCommitter from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,994 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002205: Adding provider class org.keycloak.services.error.KeycloakErrorHandler from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,994 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RealmsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,994 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.WelcomeResource from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,994 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002210: Adding provider singleton org.keycloak.services.util.ObjectMapperResolver from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,995 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.RobotsResource from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:31,995 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 69) RESTEASY002220: Adding singleton resource org.keycloak.services.resources.admin.AdminRoot from Application class org.keycloak.services.resources.KeycloakApplication
+2020-05-31 22:02:32,287 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 69) WFLYUT0021: Registered web context: '/auth' for server 'default-server'
+2020-05-31 22:02:32,487 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 55) WFLYSRV0010: Deployed "keycloak-server.war" (runtime-name : "keycloak-server.war")
+2020-05-31 22:02:32,558 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2020-05-31 22:02:32,560 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:10090/management
+2020-05-31 22:02:32,560 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:10090
+2020-05-31 22:02:32,561 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: Keycloak 10.0.1 (WildFly Core 11.1.1.Final) started in 54559ms - Started 591 of 889 services (606 services are lazy, passive or on-demand)

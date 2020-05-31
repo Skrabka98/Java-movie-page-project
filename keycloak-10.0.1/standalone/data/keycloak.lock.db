@@ -1,6 +1,6 @@
 #FileLock
-#Sun May 31 20:15:22 CEST 2020
-hostName=LAPTOP-7TK2PUV0
-id=1726bf1eae8cbc4681ebe5a1aaddd596f68e4504410
+#Sun May 31 22:02:25 CEST 2020
+server=192.168.56.1\:57669
+hostName=DESKTOP-KDQDKIJ
 method=file
-server=192.168.56.1\:61877
+id=1726c53edc78a33d5607a90ccefbfc9f871a4d567f4
