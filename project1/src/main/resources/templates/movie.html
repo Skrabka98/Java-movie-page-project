@@ -39,16 +39,25 @@
 
 
             <!--/*@thymesVar id="films" type="java.util.List<com.example.project1.accessToData.model.Film"*/-->
-            <tr th:each="film : ${films}">
-                <td/>
-                <td th:text="${film.getTitle()}"/>
-                <td th:text="${film.getProductionYear()}"/>
-                <td th:text="${film.getDescryption()}"/>
-                <td><a th:href="${film.getLink()}">Oglądaj</a></td>
+            <div class="card-title" th:each="film : ${films}">
+                <div style="text-align: center;"><h1 class="panel-title" th:text="${film.getTitle()}"/></div>
+                <div>
+                    <tr>
+                        <td><strong>Data produkcji</strong></td>
+                        <td th:text="${film.getProductionYear()}"/>
+                    </tr>
+                </div>
+                <div>
+                    <h3>Opis</h3>
+                    <div class="panel-body">
+                        <p th:text="${film.getDescryption()}"/>
+                    </div>
+                </div>
+                <div style="text-align: center">
+                <a class="btn btn-light action-button" role="button" th:href="${film.getLink()}">Oglądaj</a></div>
 
 
-
-
+</div>
     </form>
 </main>
 
